@@ -27,6 +27,8 @@ There are five audio files each folder, for a total of 70 audio files. The datas
 
     return my_dict
  ```
+ 
+ 
  - Next, we define the test audio file paths for each element in the sentence: 
     - number_audio_path : the path for the first digit of the operation
     - operator_audio_path : the path for the operators (+, - , *, /)
@@ -34,6 +36,7 @@ There are five audio files each folder, for a total of 70 audio files. The datas
  - After that, we extract MFCC features for those three files then we perform the recognition using the DTW algorithm (Dynamic Time Warping) which is a technique used for comparing two temporal sequences, such as audio signals or time series data, by aligning them to find the optimal alignment that minimizes the distance measure. It allows for flexible matching of sequences with different lengths or temporal variations. In this case, DTW is employed to find the best match between the test audio's operator MFCC features and the training samples' MFCC features, enabling accurate operator recognition.
 In this assignment, we have used the FastDTW which is an optimization technique for DTW that significantly reduces the computational complexity of the algorithm while providing a near-optimal alignment. 
 The following code snippet demonstrates the implementation for recognizing the operator: 
+
  ```javascript
 best_distance_operator = float('inf')
 best_operator = None
@@ -45,18 +48,22 @@ for class_name, class_mfccs in my_dict.items():
                 best_distance_operator = distance
                 best_operator = class_name
  ```
+ 
  The above code loops through the training set of MFCC features kept in the my_dict dictionary. It concentrates particularly on the classes that represent the operators (such as "plus," "minus," "times," and "dividedBy"). It determines the DTW distance for each class between each training sample's MFCC features and the operator_mfcc_features (extracted from the test audio). We use the Euclidean distance as the distance measure.
 - After selecting the training data that best matches the test audio files based on the DTW distance, we map the recognized numbers and operators using this predefined dictionaries :
+
 ```javascript
 number_mapping = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}
 operator_mapping = {'plus': '+', 'minus': '-', 'times': '*', 'dividedBy': '/'}
  ```
+ 
  - The final step is performing the math operation based on the recognized numbers and operator and then returning the recognized number, operator, and the computed result.
  
  <h2>4. Results:</h2>
  All the test provided were recognized correctly.
  Here are some examples of what the output looks like :
- ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/80d58c07-769c-45aa-a117-2e1aa956ffe2)
+ 
+![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/80d58c07-769c-45aa-a117-2e1aa956ffe2)
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/87ac5d73-c335-455a-9ecd-82a159ccfaff)
 
 <h2>5. Conclusion:</h2>
