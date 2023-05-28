@@ -1,15 +1,15 @@
 # Vocal Calculator
 **<h2>Table of contents</h2>**
 
-   [Introduction:](#1.-Introduction:)
+   [Introduction:](#Introduction:)
    
-   [Dataset:](#2.-Dataset:)
+   [Dataset:](#Dataset:)
    
-   [Code Overview:](#3.-Code-Overview:)
+   [Code Overview:](#Code-Overview:)
    
-   [Results](#4.-Results:)
+   [Results](#Results:)
 
-   [Conclusion](#5.-Conclusion:)
+   [Conclusion](#Conclusion:)
    
 <h2>Introduction: </h2>
 The goal of this assignment is to create a speech recognition system that uses audio input to perform mathematical operations. Recognizing spoken numbers and operators is the goal, followed by computing the associated math operation.
