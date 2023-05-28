@@ -8,6 +8,7 @@ There are five audio files each folder, for a total of 70 audio files. The datas
 
 <h2>3. Code Overview:</h2>
 - The first thing we do is loading the audios contained in the dataset, then we extract their corresponding MFFC features and save them in a dictionary.
+
  ```javascript
  def load_extractMFCC_save(path):
     my_dict = {}
@@ -68,6 +69,7 @@ operator_mapping = {'plus': '+', 'minus': '-', 'times': '*', 'dividedBy': '/'}
 
 <h2>5. Conclusion:</h2>
 In conclusion, this assignment's use of DTW for voice recognition has produced encouraging outcomes. Based on its MFCC properties, the DTW algorithm, more specifically the FastDTW optimization, has proven its capability to effectively match and detect spoken numbers and mathematical operators.
+
 
 Even while DTW produces positive results, the recognition accuracy could still use some improvement. Investigating additional methods and algorithms frequently utilized in voice recognition tasks is one option that could be taken. For instance, utilizing deep learning models' capacity to recognize intricate connections and patterns in sequential data, such as convolutional neural networks (CNNs) or recurrent neural networks (RNNs), may enhance recognition performance.
 
