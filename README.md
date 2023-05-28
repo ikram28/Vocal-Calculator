@@ -47,6 +47,8 @@ There are five audio files each folder, for a total of 70 audio files. The datas
     - operator_audio_path : the path for the operators (+, - , *, /)
     - second_number_audio_path : the path for the second digit of the operation
  - After that, we extract MFCC features for those three files then we perform the recognition using the DTW algorithm (Dynamic Time Warping) which is a technique used for comparing two temporal sequences, such as audio signals or time series data, by aligning them to find the optimal alignment that minimizes the distance measure. It allows for flexible matching of sequences with different lengths or temporal variations. In this case, DTW is employed to find the best match between the test audio's operator MFCC features and the training samples' MFCC features, enabling accurate operator recognition.
+
+
 In this assignment, we have used the FastDTW which is an optimization technique for DTW that significantly reduces the computational complexity of the algorithm while providing a near-optimal alignment. 
 The following code snippet demonstrates the implementation for recognizing the operator: 
 
