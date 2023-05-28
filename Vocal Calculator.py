@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+
 
 
 import numpy as np
@@ -16,9 +16,7 @@ from dtw import dtw
 
 
 # # Load the dataset and extract the MFCC features:
-# 
 
-# In[2]:
 
 
 def load_extractMFCC_save(path):
@@ -40,22 +38,19 @@ def load_extractMFCC_save(path):
     return my_dict
 
 
-# In[3]:
+
 
 
 my_dict = load_extractMFCC_save(r'C:\Users\ASUS ROG STRIX\Desktop\Projet\RAP\Dataset')
 
 
-# In[4]:
 
 
-my_dict
+
 
 
 # # Define the test audio file paths for each element in the sentence
-# 
 
-# In[5]:
 
 
 number_audio_path = r'C:\Users\ASUS ROG STRIX\Desktop\Projet\RAP\Dataset\Test\zero.wav'
@@ -65,9 +60,7 @@ second_number_audio_path = r'C:\Users\ASUS ROG STRIX\Desktop\Projet\RAP\Dataset\
 
 
 # # Extract MFCC features for the test audio files
-# 
 
-# In[6]:
 
 
 freq1, number_audio = scipy.io.wavfile.read(number_audio_path, mmap=False)
@@ -83,10 +76,8 @@ second_number_mfcc_features = mfcc(second_number_audio,freq3, winlen=0.025, wins
 
 
 
-# # Perform recognition for the number
-# 
+#  Perform recognition for the number
 
-# In[7]:
 
 
 best_distance_number = float('inf')
@@ -100,10 +91,7 @@ for class_name, class_mfccs in my_dict.items():
                 best_number = class_name
 
 
-# # Perform recognition for the operator
-# 
-
-# In[8]:
+#  Perform recognition for the operator
 
 
 best_distance_operator = float('inf')
@@ -117,10 +105,8 @@ for class_name, class_mfccs in my_dict.items():
                 best_operator = class_name
 
 
-# # Perform recognition for the second number
-# 
+#  Perform recognition for the second number
 
-# In[9]:
 
 
 best_distance_second_number = float('inf')
@@ -135,9 +121,7 @@ for class_name, class_mfccs in my_dict.items():
 
 
 # # Number and operator mapping
-# 
 
-# In[10]:
 
 
 number_mapping = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}
@@ -148,11 +132,8 @@ operator_mapping = {'plus': '+', 'minus': '-', 'times': '*', 'dividedBy': '/'}
 operator = operator_mapping.get(best_operator)
 
 
-# # Perform the math operation and Print the recognized number, operator, and result
-# 
-# 
+# Perform the math operation and Print the recognized number, operator, and result
 
-# In[11]:
 
 
 if number1 is not None and operator is not None and number2 is not None:
