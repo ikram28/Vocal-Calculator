@@ -11,14 +11,14 @@
 
    [Conclusion](#5.-Conclusion:)
    
-<h2>1. Introduction: </h2>
+<h2>Introduction: </h2>
 The goal of this assignment is to create a speech recognition system that uses audio input to perform mathematical operations. Recognizing spoken numbers and operators is the goal, followed by computing the associated math operation.
 
-<h2>2. Dataset:</h2>
+<h2>Dataset:</h2>
 The dataset used for the speech recognition assignment consists of 14 folders, each representing digits (0-9) and mathematical operators (/, -, *,+ ).
 There are five audio files each folder, for a total of 70 audio files. The dataset is structured, with distinct folders for each class, making it simple to retrieve and analyze the audio samples.
 
-<h2>3. Code Overview:</h2>
+<h2>Code Overview:</h2>
 - The first thing we do is loading the audios contained in the dataset, then we extract their corresponding MFFC features and save them in a dictionary.
 
  ```javascript
@@ -72,14 +72,14 @@ operator_mapping = {'plus': '+', 'minus': '-', 'times': '*', 'dividedBy': '/'}
  
  - The final step is performing the math operation based on the recognized numbers and operator and then returning the recognized number, operator, and the computed result.
  
- <h2>4. Results:</h2>
+ <h2>Results:</h2>
  All the test provided were recognized correctly.
  Here are some examples of what the output looks like :
  
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/80d58c07-769c-45aa-a117-2e1aa956ffe2)
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/87ac5d73-c335-455a-9ecd-82a159ccfaff)
 
-<h2>5. Conclusion:</h2>
+<h2>Conclusion:</h2>
 In conclusion, this assignment's use of DTW for voice recognition has produced encouraging outcomes. Based on its MFCC properties, the DTW algorithm, more specifically the FastDTW optimization, has proven its capability to effectively match and detect spoken numbers and mathematical operators.
 
 
