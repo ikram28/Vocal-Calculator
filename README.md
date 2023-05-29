@@ -74,12 +74,50 @@ operator_mapping = {'plus': '+', 'minus': '-', 'times': '*', 'dividedBy': '/'}
  
  - The final step is performing the math operation based on the recognized numbers and operator and then returning the recognized number, operator, and the computed result.
  
- <h2>Results:</h2>
- All the test provided were recognized correctly.
- Here are some examples of what the output looks like :
+ <h3>Sentence segmentation and full-sentence recognition</h3>
  
+Instead of supplying individual audio files for each component (digits and operators), an attempt was made to process a single test audio file that contained the whole sentence as a way to improve the project. The goal was to separate the audio file into its component parts before doing recognition on each section.
+
+
+The librosa.effects.split() method from the Librosa package was used to partition the audio. A threshold of 30 dB served as the foundation for segmentation, which was designed to identify substantial changes in the audio signal. To ensure accurate recognition, each segment's duration was considered, and segments with a minimum duration of 0.2 seconds were removed.
+```javascript
+import librosa
+from scipy.io import wavfile
+
+audio, sr = librosa.load(audio_path, sr=None)    
+speech_segments = librosa.effects.split(audio, top_db=30)
+MIN_SEGMENT_DURATION = 0.2  # Define the minimum segment duration in seconds
+
+for i, segment in enumerate(speech_segments):
+    segment_duration = librosa.get_duration(y=audio[segment[0]:segment[1]], sr=sr)
+    if segment_duration >= MIN_SEGMENT_DURATION:
+        segment_audio = audio[segment[0]:segment[1]]
+        segment_path = f'segment_{i}.wav'
+        wavfile.write(segment_path, sr, (segment_audio * 32768).astype(np.int16))
+
+ ```
+ 
+ For additional processing and recognition, each part was stored as a separate audio file. The segment index was indicated by "i" in the file names, which were formatted as "segment_i.wav".
+
+ 
+ <h2>Results:</h2>
+ All the test provided were recognized correctly when we tested on separate audio files for each component (digits and operators).
+ Here are some examples of what the output looks like : 
+ * The files provided contained : 
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/80d58c07-769c-45aa-a117-2e1aa956ffe2)
+* The files provided contained : 
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/87ac5d73-c335-455a-9ecd-82a159ccfaff)
+
+However, when we provide a single audio file and then we segmented it, the recognition results obtained were not satisfactory. The segmentation process introduced additional complexities due to factors such as varying speech speed, overlapping components, and potential misalignment between the segmented components. These factors significantly affected the accuracy of the recognition process.
+ Here are some examples of what the output looks like :
+* The file we provided contains the following sentence: 4 / 2
+![Screenshot_878](https://github.com/ikram28/Vocal-Calculator/assets/86806466/094cc0a6-9ae0-45f1-946f-3f7d80ca9416)
+
+* The file we provided contains the following sentence:  9 + 1
+![Screenshot_879](https://github.com/ikram28/Vocal-Calculator/assets/86806466/b41de866-242a-4600-9bd8-5942578b4dc6)
+
+ 
+
 
 <h2>Conclusion:</h2>
 In conclusion, this assignment's use of DTW for voice recognition has produced encouraging outcomes. Based on its MFCC properties, the DTW algorithm, more specifically the FastDTW optimization, has proven its capability to effectively match and detect spoken numbers and mathematical operators.
