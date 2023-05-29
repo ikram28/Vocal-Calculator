@@ -103,11 +103,12 @@ for i, segment in enumerate(speech_segments):
  <h2>Results:</h2>
  All the test provided were recognized correctly when we tested on separate audio files for each component (digits and operators).
  Here are some examples of what the output looks like : 
- * The files provided contained : 
+ 
+ * The files provided contained : 0 * 4
  
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/80d58c07-769c-45aa-a117-2e1aa956ffe2)
 
-* The files provided contained : 
+* The files provided contained : 8 / 5
 
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/87ac5d73-c335-455a-9ecd-82a159ccfaff)
 
