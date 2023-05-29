@@ -112,7 +112,7 @@ for i, segment in enumerate(speech_segments):
 
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/87ac5d73-c335-455a-9ecd-82a159ccfaff)
 
-However, when we provide a single audio file and then we segmented it, the recognition results obtained were not satisfactory. The segmentation process introduced additional complexities due to factors such as varying speech speed, overlapping components, and potential misalignment between the segmented components. These factors significantly affected the accuracy of the recognition process.
+However, when we provided a single audio file and then we segmented it, the recognition results obtained were not satisfactory. The segmentation process introduced additional complexities due to factors such as varying speech speed, overlapping components, and potential misalignment between the segmented components. These factors significantly affected the accuracy of the recognition process.
  Here are some examples of what the output looks like :
 * The file we provided contains the following sentence: 4 / 2
 
@@ -126,13 +126,14 @@ However, when we provide a single audio file and then we segmented it, the recog
 
 
 <h2>Conclusion:</h2>
-In conclusion, this assignment's use of DTW for voice recognition has produced encouraging outcomes. Based on its MFCC properties, the DTW algorithm, more specifically the FastDTW optimization, has proven its capability to effectively match and detect spoken numbers and mathematical operators.
+In conclusion, this assignment's use of Dynamic Time Warping (DTW) for voice recognition produced successful results when specific audio files for numbers and operators were employed. Based on their MFCC features, the DTW algorithm, in particular the FastDTW optimization, showed its efficacy in precisely matching and identifying spoken numbers and mathematical operators.
+
+The identification outcomes were, however, inadequate when attempting to process a single test audio file including the entire sentence. Additional challenges were created by the segmentation and recognition of whole sentences, including different speech rates, overlapping components, and possible segment alignment issues. These elements have a big impact on how accurate the recognition process was.
+
+The difficulties discovered in segmenting and recognizing whole sentences highlight the need for additional research and the exploration of other methodologies, even though DTW has demonstrated its effectiveness in recognizing individual components. Utilizing complex audio segmentation algorithms and alignment techniques could be one approach to increasing the precision and dependability of entire sentence recognition.
 
 
-Even while DTW produces positive results, the recognition accuracy could still use some improvement. Investigating additional methods and algorithms frequently utilized in voice recognition tasks is one option that could be taken. For instance, utilizing deep learning models' capacity to recognize intricate connections and patterns in sequential data, such as convolutional neural networks (CNNs) or recurrent neural networks (RNNs), may enhance recognition performance.
 
-As an improvement to this project, the system may be given a single test file containing the complete sentence and segment it into its component parts (digits and operators) before executing the recognition procedure.
-This approach would more closely resemble real-world scenarios where continuous speech is encountered, and it would require additional steps such as speech segmentation and alignment to accurately identify and recognize the individual components of the sentence.
 
 
 
