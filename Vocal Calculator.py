@@ -58,6 +58,21 @@ operator_audio_path = r'C:\Users\ASUS ROG STRIX\Desktop\Projet\RAP\Dataset\Test\
 second_number_audio_path = r'C:\Users\ASUS ROG STRIX\Desktop\Projet\RAP\Dataset\Test\four.wav'
 
 
+# If a single file containing the whole sentence is provided we need to segment it using the following code :
+"""
+import librosa
+from scipy.io import wavfile
+
+audio, sr = librosa.load(audio_path, sr=None)    
+speech_segments = librosa.effects.split(audio, top_db=30)
+MIN_SEGMENT_DURATION = 0.2  # Define the minimum segment duration in seconds
+for i, segment in enumerate(speech_segments):
+        segment_duration = librosa.get_duration(y=audio[segment[0]:segment[1]], sr=sr)
+        if segment_duration >= MIN_SEGMENT_DURATION:
+            segment_audio = audio[segment[0]:segment[1]]
+            segment_path = f'segment_{i}.wav'
+            wavfile.write(segment_path, sr, (segment_audio * 32768).astype(np.int16))
+ """         
 
 # # Extract MFCC features for the test audio files
 
