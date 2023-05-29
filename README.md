@@ -104,16 +104,21 @@ for i, segment in enumerate(speech_segments):
  All the test provided were recognized correctly when we tested on separate audio files for each component (digits and operators).
  Here are some examples of what the output looks like : 
  * The files provided contained : 
+ 
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/80d58c07-769c-45aa-a117-2e1aa956ffe2)
+
 * The files provided contained : 
+
 ![image](https://github.com/ikram28/Vocal-Calculator/assets/86806466/87ac5d73-c335-455a-9ecd-82a159ccfaff)
 
 However, when we provide a single audio file and then we segmented it, the recognition results obtained were not satisfactory. The segmentation process introduced additional complexities due to factors such as varying speech speed, overlapping components, and potential misalignment between the segmented components. These factors significantly affected the accuracy of the recognition process.
  Here are some examples of what the output looks like :
 * The file we provided contains the following sentence: 4 / 2
+
 ![Screenshot_878](https://github.com/ikram28/Vocal-Calculator/assets/86806466/094cc0a6-9ae0-45f1-946f-3f7d80ca9416)
 
 * The file we provided contains the following sentence:  9 + 1
+
 ![Screenshot_879](https://github.com/ikram28/Vocal-Calculator/assets/86806466/b41de866-242a-4600-9bd8-5942578b4dc6)
 
  
