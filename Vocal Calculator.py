@@ -165,4 +165,32 @@ if number1 is not None and operator is not None and number2 is not None:
     print("Recognized Operator: ", operator)
     print("Recognized Second Number: ", number2)
     print("Result: ", result)
+    
+    
+    # Speech generation using text-to-speech :
+    import pyttsx3
+
+    def generate_speech(text):
+        engine = pyttsx3.init()
+        engine.setProperty('rate', 150)  # Adjust the speech rate as needed
+        engine.say(text)
+        engine.runAndWait()
+
+    if number1 is not None and operator is not None and number2 is not None:
+        if operator == '+':
+            result = number1 + number2
+            speech_text = f"{number1} plus {number2} equals {result}"
+        elif operator == '-':
+            result = number1 - number2
+            speech_text = f"{number1} minus {number2} equals {result}"
+        elif operator == '*':
+            result = number1 * number2
+            speech_text = f"{number1} times {number2} equals {result}"
+        elif operator == '/':
+            result = number1 / number2
+            speech_text = f"{number1} divided by {number2} equals {result}"
+
+
+    generate_speech(speech_text)
+
 
