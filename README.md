@@ -8,6 +8,8 @@
    [Code Overview](#Code-Overview)
    
    [Results](#Results)
+   
+   [Speech To Text](#Speech-To-Text)
 
    [Conclusion](#Conclusion)
    
@@ -122,7 +124,18 @@ However, when we provided a single audio file and then we segmented it, the reco
 
 ![Screenshot_879](https://github.com/ikram28/Vocal-Calculator/assets/86806466/b41de866-242a-4600-9bd8-5942578b4dc6)
 
+ <h2>Speech To Text</h2>
  
+ The generated of speech output based on the recognized number, operator, and outcome was another improvement added to the project. The purpose of this feature was to make the mathematical procedure audible. The text was turned into speech using the pyttsx3 library's generate_speech function.
+
+This is how the generated speech was put together:
+
+ * For addition (+): "Number 1 plus Number 2 equals Result."
+ * For subtraction (-): "Number 1 minus Number 2 equals Result."
+ * For multiplication (*): "Number 1 times Number 2 equals Result."
+ * For division (/): "Number 1 divided by Number 2 equals Result."
+
+To achieve a clear and natural output, the speech pace was changed to 150. It's important to keep in mind that the option of voice may change depending on the text-to-speech voices offered by the system.
 
 
 <h2>Conclusion:</h2>
